@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Covid Test Centres</h1>
+    <p class="lead">Find out information on each Covid 19 testing centre in Northern Ireland</p>
+    <p><a href="https://www.publichealth.hscni.net/covid-19-coronavirus/testing-and-tracing-covid-19/testing-covid-19" class="btn btn-primary btn-lg">Learn more about Covid 19 &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col welcome-col">
+        <div class="card welcome-card">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Antrim</h5>
+                <p class="card-text">Antrim Business Park, Randalstown Road, Antrim, BT41 4LD</p>
+                <a href='@Url.Action("ByCentre", "Appointment", new { id = 4 })' class="btn btn-primary">See Appointments</a>
+            </div>
+        </div>
+    </div>
+    <div class="col welcome-col">
+        <div class="card welcome-card">
+            <div class="card-header">
+                
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Derry/Londonderry</h5>
+                <p class="card-text">The LYCRA Company Car Park, 60 Clooney Rd, Co, Londonderry BT47 6TP</p>
+                <a href='@Url.Action("ByCentre", "Appointment", new { id = 1 })' class="btn btn-primary">See Appointments</a>
+            </div>
+        </div>
+    </div>
+    <div class="col welcome-col">
+        <div class="card welcome-card">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Belfast</h5>
+                <p class="card-text">Duncrue Street (access via York Street), Belfast, BT3 9AQ</p>
+                <a href='@Url.Action("ByCentre", "Appointment", new { id = 5 })' class="btn btn-primary">See Appointments</a>
+            </div>
+        </div>
+    </div>
+    <div class="col welcome-col">
+        <div class="card welcome-card">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">See More</h5>
+                <p class="card-text"></p>
+                <a href='@Url.Action("Index", "TestCentre")' class="btn btn-primary">See All Test Centres</a>
+            </div>
+        </div>
+    </div>
+</div>

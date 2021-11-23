@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Assignment2.Models.Appointment>
+
+@{
+    ViewBag.Title = "Test Centre Appointments";
+}
+
+@foreach (var item in Model)
+{
+<h2>@Html.DisplayFor(modelItem => item.TestCentre.CentreName)</h2>
+}
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Patient Name
+            </th>
+            <th>
+                Contact Number
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Appointment Date
+            </th>
+            <th>
+                Appointment Time
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientContactNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentTime)
+                </td>
+            </tr>
+        }
+
+    </table>

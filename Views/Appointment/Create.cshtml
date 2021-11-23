@@ -1,0 +1,76 @@
+﻿@using Assignment2.Context
+@using Assignment2.Models.Repositories
+@model Assignment2.Models.Appointment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Appointment</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <form>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group row mb-4 mb-4">
+            @Html.LabelFor(model => model.PatientName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 row">
+                @Html.EditorFor(model => model.PatientName, new { htmlAttributes = new { @class = "form-control w-100" } })
+                @Html.ValidationMessageFor(model => model.PatientName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            @Html.LabelFor(model => model.PatientContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 row">
+                @Html.EditorFor(model => model.PatientContactNo, new { htmlAttributes = new { @class = "form-control w-100" } })
+                @Html.ValidationMessageFor(model => model.PatientContactNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            @Html.LabelFor(model => model.PatientAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 row">
+                @Html.EditorFor(model => model.PatientAddress, new { htmlAttributes = new { @class = "form-control w-100" } })
+                @Html.ValidationMessageFor(model => model.PatientAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            @Html.LabelFor(model => model.AppointmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 row">
+                @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "form-control w-100" } })
+                @Html.ValidationMessageFor(model => model.AppointmentDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            @Html.LabelFor(model => model.AppointmentTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 row">
+                @Html.EditorFor(model => model.AppointmentTime, new { htmlAttributes = new { @class = "form-control w-100" } })
+                @Html.ValidationMessageFor(model => model.AppointmentTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            @Html.LabelFor(model => model.TestCentreID, "Test Centers", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 row">
+                @Html.DropDownListFor(model => model.TestCentreID, Model.TestCentres, "- Select Test Centre - ", htmlAttributes: new { @class = "form-control w-100" })
+                @Html.ValidationMessageFor(model => model.TestCentreID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            <div class="col-md-12 row">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </form>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

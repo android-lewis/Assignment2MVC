@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Assignment2.Models.TestCentre>
+
+@{
+    ViewBag.Title = "Test Centres";
+}
+
+<h2>Test Centres</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new object { },
+        new { @class = "btn btn-outline-success"})
+</p>
+<table class="table table-hover">
+    <thead class=" thead-dark">
+        <tr>
+            <th>
+                Centre Name
+            </th>
+            <th>
+                Opening Times
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Contact Num
+            </th>
+            <th>
+                County
+            </th>
+            <th>
+                Appointments
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentreOperatingTimes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentreAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentreContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentreCounty)
+            </td>
+            <td>
+                <a href='@Url.Action("ByCentre", "Appointment", new {id = item.TestCentreID})' type="button" class="btn btn-primary">Appointments</a>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.TestCentreID}) |
+                @Html.ActionLink("Details", "Details", new {id = item.TestCentreID}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.TestCentreID})
+            </td>
+        </tr>
+    }
+
+</table>

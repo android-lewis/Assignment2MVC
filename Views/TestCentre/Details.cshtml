@@ -1,0 +1,58 @@
+﻿@model Assignment2.Models.TestCentre
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TestCentre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CentreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentreName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CentreOperatingTimes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentreOperatingTimes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CentreAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentreAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CentreContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentreContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CentreCounty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentreCounty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TestCentreID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
