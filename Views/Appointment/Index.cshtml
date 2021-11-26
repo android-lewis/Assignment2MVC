@@ -19,55 +19,57 @@
     @Html.ActionLink("Create New", "Create", new object { },
         new { @class = "btn btn-outline-success" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TestCentre.CentreName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PatientName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PatientContactNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PatientAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AppointmentDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AppointmentTime)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestCentre.CentreName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PatientName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PatientContactNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PatientAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AppointmentDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AppointmentTime)
-        </td>
-        <td>
-            <a href='@Url.Action("Details", "Appointment", new { id = item.AppointmentID })'  data-bs-toggle="tooltip" data-bs-placement="top" title="Details"><i class="fas fa-chevron-circle-right"></i></a> |
-            <a href='@Url.Action("Edit", "Appointment", new {id = item.AppointmentID})' data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="far fa-edit"></i></a> |
-            <a href='@Url.Action("Delete", "Appointment", new {id = item.AppointmentID})' data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
-        </td>
-    </tr>
-}
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TestCentre.CentreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentTime)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestCentre.CentreName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientContactNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentTime)
+                </td>
+                <td style="display: flex; flex-direction: row; justify-content: space-between; gap: 5px;">
+                    <a href='@Url.Action("Details", "Appointment", new {id = item.AppointmentID})' data-bs-toggle="tooltip" data-bs-placement="top" title="Details"><i class="fas fa-chevron-circle-right"></i></a> |
+                    <a href='@Url.Action("Edit", "Appointment", new {id = item.AppointmentID})' data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="far fa-edit"></i></a> |
+                    <a href='@Url.Action("Delete", "Appointment", new {id = item.AppointmentID})' data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        }
 
 </table>

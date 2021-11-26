@@ -4,6 +4,15 @@
     ViewBag.Title = "Test Centres";
 }
 
+<script>
+    window.onload = (event) => {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    };
+</script>
+
 <h2>Test Centres</h2>
 
 <p>
@@ -11,7 +20,7 @@
         new { @class = "btn btn-outline-success"})
 </p>
 <table class="table table-hover">
-    <thead class=" thead-dark">
+    <thead class="thead-dark">
         <tr>
             <th>
                 Centre Name
@@ -56,10 +65,10 @@
             <td>
                 <a href='@Url.Action("ByCentre", "Appointment", new {id = item.TestCentreID})' type="button" class="btn btn-primary">Appointments</a>
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {id = item.TestCentreID}) |
-                @Html.ActionLink("Details", "Details", new {id = item.TestCentreID}) |
-                @Html.ActionLink("Delete", "Delete", new {id = item.TestCentreID})
+            <td style="display: flex; flex-direction: row; justify-content: space-between; gap: 5px;">
+                <a href='@Url.Action("Details", "TestCentre", new { id = item.TestCentreID })'  data-bs-toggle="tooltip" data-bs-placement="top" title="Details"><i class="fas fa-chevron-circle-right"></i></a> |
+                <a href='@Url.Action("Edit", "TestCentre", new {id = item.TestCentreID})' data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="far fa-edit"></i></a> |
+                <a href='@Url.Action("Delete", "TestCentre", new {id = item.TestCentreID})' data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
             </td>
         </tr>
     }

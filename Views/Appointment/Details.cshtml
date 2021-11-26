@@ -9,55 +9,56 @@
 <div>
     <h4>Appointment</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TestCentre.CentreName)
-        </dt>
+    <dl class="dl-horizontal row">
+        <div class="col">
+            <dt>
+                @Html.DisplayNameFor(model => model.TestCentre.CentreName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TestCentre.CentreName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TestCentre.CentreName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PatientName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PatientName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PatientName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PatientContactNo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PatientContactNo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PatientContactNo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PatientContactNo)
+            </dd>
+        </div>
+        <div class="col">
+            <dt>
+                @Html.DisplayNameFor(model => model.PatientAddress)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PatientAddress)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PatientAddress)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.AppointmentDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PatientAddress)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AppointmentDate)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AppointmentDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.AppointmentTime)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AppointmentDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AppointmentTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AppointmentTime)
-        </dd>
-
+            <dd>
+                @Html.DisplayFor(model => model.AppointmentTime)
+            </dd>
+        </div>
     </dl>
 </div>
 <p>

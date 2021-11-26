@@ -88,12 +88,19 @@ namespace Assignment2.Controllers
         public ActionResult ConfirmEdit(int id)
         {
             Appointment existing = repository.SelectById(id);
+            existing.TestCentres = centreRepository.SelectAll().ToList().Select(c => new SelectListItem
+            {
+                Value = c.TestCentreID.ToString(),
+                Text = c.CentreName,
+            });
             return View(existing);
         }
 
         [HttpPost]
         public ActionResult Edit(Appointment obj)
         {
+;
+
             if (ModelState.IsValid)
             { // check valid state
                 repository.Update(obj);
